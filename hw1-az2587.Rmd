@@ -51,7 +51,10 @@ plot_df <- tibble(
   bill_length = penguins$bill_length_mm,
   fact = factor(penguins$species)
 )
-ggplot(plot_df, aes(x = flipper_length, y = bill_length, color = fact)) + geom_point() + labs(title = "flipper length vs bill length") + theme(plot.title = element_text(face = "bold", hjust = 0.5))
-ggsave("hw1_scatterplot.png", width = 10, height = 10)
 ```
+```{r}
+print(ggplot(plot_df, aes(x = flipper_length, y = bill_length, color = fact)) + geom_point() + labs(title = "flipper length vs bill length") + theme(plot.title = element_text(face = "bold", hjust = 0.5)))
+ggsave("hw1_scatterplot.png", width = 5, height = 5)
+```
+
 
