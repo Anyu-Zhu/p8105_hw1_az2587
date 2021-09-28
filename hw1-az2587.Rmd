@@ -26,7 +26,7 @@ mean_fact = mean(pull(df, x_4))
 ```
 The means are shown as: `r mean_num`; `r mean_log`; `r mean_char`; `r mean_fact`. \
 Mean of **numeric and logical vectors** can be calculated while mean of **character vector and factor vector** cannot be calculated. And thus, we got NAs for these two columns.
-```{r}
+```{r eval = FALSE}
 as.numeric(df$x_2)
 as.numeric(df$x_3)
 as.numeric(df$x_4)
@@ -53,7 +53,7 @@ plot_df <- tibble(
 )
 ```
 ```{r}
-plot <- ggplot(plot_df, aes(x = flipper_length, y = bill_length, color = fact)) + geom_point() + labs(title = "flipper length vs bill length") + theme(plot.title = element_text(face = "bold", hjust = 0.5))
+plot <- ggplot(plot_df, aes(x = bill_length, y = flipper_length, color = fact)) + geom_point() + labs(title = "flipper length vs bill length") + theme(plot.title = element_text(face = "bold", hjust = 0.5))
 print(plot)
 ggsave("hw1_scatterplot.png", width = 5, height = 5)
 ```
